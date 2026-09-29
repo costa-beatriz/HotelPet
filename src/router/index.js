@@ -6,7 +6,12 @@ const router = createRouter({
 
     {
       path: '/',
-      name: 'pet',
+      name: '/pets',
+      component: () => import('../views/PetView.vue'),
+    },
+    {
+      path: '/pets',
+      name: 'pets',
       component: () => import('../views/PetView.vue'),
     },
     {
