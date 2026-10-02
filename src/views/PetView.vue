@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import { RouterLink } from 'vue-router';
 ('onMounted');
 const API_URL = 'http://localhost:3000';
 ('API_URL');
@@ -40,10 +41,14 @@ onMounted(() => {
   </div>
   <table class="table table-striped table-hover">
     <thead>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>Espécie</th>
-      <th>Tutor</th>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Espécie</th>
+        <th>Tutor</th>
+        <th>Ações</th>
+      </tr>
+   
     </thead>
     <tbody>
       <tr
@@ -54,6 +59,12 @@ onMounted(() => {
         <td>{{ pet.nome }}</td>
         <td>{{ pet.especie }}</td>
         <td>{{ nomeDoTutor(pet.tutorId) }}</td>
+        <td>
+          <RouterLink :to="`/pets/${pet.id}`"> Visualizar </RouterLink> 
+          
+
+          Excluir
+        </td>
       </tr>
     </tbody>
   </table>
