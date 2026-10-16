@@ -12,15 +12,13 @@ const route = useRoute();
 
 
 async function carregarTutor() {
-  try{
-    const respotasTutor = await(fetch(`${API_URL}/tutores/${route.params.id}`));    
-    tutor.value = await respotasTutor.json();
-    console.log('tutor', tutor.value);
+ try{
 
-    const respostaTutor = await fetch(`${API_URL}/tutores/${tutor.value.tutorId}`);
+    const respostaTutor = await fetch(`${API_URL}/tutores/${route.params.id}`);
 
     tutor.value =  respostaTutor.ok ? await respostaTutor.json() : {nome: 'Tutor não encontrado'};
     
+    console.log('tutor', tutor.value);
 } catch (error) {
         console.error('Erro ao carregar os dados do tutor:', error);
     }
