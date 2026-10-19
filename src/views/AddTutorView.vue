@@ -208,16 +208,6 @@
         />
       </div>
 
-      <div class="col-md-6">
-        <label for="cidade" class="form-label">Cidade:</label>
-        <input
-          type="text"
-          id="cidade"
-          v-model="novoTutor.cidade"
-          class="form-control"
-          required
-        />
-      </div>
 
       <div class="col-md-6">
         <label for="estado" class="form-label">Estado:</label>
@@ -243,6 +233,7 @@
 
     
       <button type="submit" class=" btn btn-success">Cadastrar Tutor</button>
+      <button type="subimit" class="btn btn-error">Cancelar</button>
     </form>
   </div>
 </template>
